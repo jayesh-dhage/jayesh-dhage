@@ -1,0 +1,40 @@
+var doc = new jsPDF();
+doc.addImage("examples/images/Octonyan.jpg", "JPEG", 10, 12, 10, 10)
+doc.setFontSize(22);
+doc.setTextColor(255, 0, 0);
+doc.setFont("Frutiger LT Std", "bold");
+doc.text("Ricoh Toner Pickup Report", 20, 20);
+
+
+doc.setTextColor(100);
+var DATE = doc.splitTextToSize("20 Jan 2022", 150)
+doc.setFontSize(16);
+doc.setFont("Frutiger LT Std", "normal");
+doc.text(DATE, 20, 40);
+
+doc.setTextColor(100);
+var RMA = doc.splitTextToSize("RMA Number  - 0001", 150)
+doc.setFontSize(16);
+doc.setFont("Frutiger LT Std", "normal");
+doc.text(RMA, 20, 50);
+
+var CName = doc.splitTextToSize("Customer Name - John kely", 150)
+doc.setFontSize(16);
+doc.setFont("Frutiger LT Std", "normal");
+doc.text(CName, 20, 60);
+
+doc.addImage("examples/images/Octonyan.jpg", "JPEG", 20, 160, 10, 10)
+var CPerson = doc.splitTextToSize("Contact Person - John kely", 150)
+doc.setFontSize(16);
+doc.textCPerson, 20, 70);
+
+doc.setFont("Frutiger LT Std", "bold");
+var PTDetails = doc.splitTextToSize("Pickup Toner Details", 150)
+doc.setFontSize(16);
+doc.text(PTDetails, 20, 90);
+
+var CSign = doc.splitTextToSize("Customer Signature", 150)
+doc.setFontSize(16);
+doc.setFont("Frutiger LT Std", "bold");
+doc.text(CSign, 20, 180);
+
